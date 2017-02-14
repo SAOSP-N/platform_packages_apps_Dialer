@@ -82,6 +82,8 @@ public class SoundSettingsFragment extends PreferenceFragment
         }
     };
 
+    public static final String BUTTON_SMART_MUTE_KEY = "button_smart_mute";
+
     @Override
     public Context getContext() {
         return getActivity();

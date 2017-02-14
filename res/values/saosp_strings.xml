@@ -24,4 +24,9 @@
     <!-- Dialpad at launch -->
     <string name="show_dialpad_at_start_title">Show dialpad at start</string>
 
+    <!-- Smart Options -->
+    <string name="smart_category_title">Smart options</string>
+    <string name="smart_mute_title">Smart mute</string>
+    <string name="smart_mute_summary">Mute the incoming call by flipping the device</string>
+
 </resources>

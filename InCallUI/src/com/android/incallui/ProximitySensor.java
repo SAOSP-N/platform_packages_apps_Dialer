@@ -39,8 +39,10 @@ import com.android.incallui.InCallPresenter.InCallStateListener;
  * sensor should be enabled and disabled. Most of that state is fed into this class through
  * public methods.
  */
-public class ProximitySensor implements AccelerometerListener.OrientationListener,
+
+public class ProximitySensor implements AccelerometerListener.ChangeListener,
         InCallStateListener, AudioModeListener {
+
     private static final String TAG = ProximitySensor.class.getSimpleName();
 
     private final PowerManager mPowerManager;
@@ -91,9 +93,14 @@ public class ProximitySensor implements AccelerometerListener.OrientationListene
      * Called to identify when the device is laid down flat.
      */
     @Override
-    public void orientationChanged(int orientation) {
+    public void onOrientationChanged(int orientation) {
         mOrientation = orientation;
         updateProximitySensorMode();
+    }
+
+    @Override
+    public void onDeviceFlipped(boolean faceDown) {
+        // ignored
     }
 
     /**
